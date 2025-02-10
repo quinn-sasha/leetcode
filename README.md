@@ -10,3 +10,6 @@
 
 
 ## stack
+
+- [20. Valid Parentheses](https://github.com/quinn-sasha/leetcode/pull/6)
+- [206. Reverse Linked List](https://github.com/quinn-sasha/leetcode/pull/7)
