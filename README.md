@@ -13,3 +13,10 @@
 
 - [20. Valid Parentheses](https://github.com/quinn-sasha/leetcode/pull/6)
 - [206. Reverse Linked List](https://github.com/quinn-sasha/leetcode/pull/7)
+
+
+## Heap, PriorityQueue
+
+- [703. Kth Largest Element in a Stream](https://github.com/quinn-sasha/leetcode/pull/8)
+- [347. Top K Frequent Elements](https://github.com/quinn-sasha/leetcode/pull/9)
+- [373. Find K Pairs with Smallest Sums](https://github.com/quinn-sasha/leetcode/pull/10)
