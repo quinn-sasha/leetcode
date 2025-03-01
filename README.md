@@ -20,3 +20,13 @@
 - [703. Kth Largest Element in a Stream](https://github.com/quinn-sasha/leetcode/pull/8)
 - [347. Top K Frequent Elements](https://github.com/quinn-sasha/leetcode/pull/9)
 - [373. Find K Pairs with Smallest Sums](https://github.com/quinn-sasha/leetcode/pull/10)
+
+
+## HashMap
+
+- [1. Two Sum.md](https://github.com/quinn-sasha/leetcode/pull/11)
+- [49. Group Anagrams](https://github.com/quinn-sasha/leetcode/pull/12)
+- [349. Intersection of Two Arrays](https://github.com/quinn-sasha/leetcode/pull/13)
+- [929. Unique Email Addresses](https://github.com/quinn-sasha/leetcode/pull/14)
+- [387. First Unique Character in a String](https://github.com/quinn-sasha/leetcode/pull/15)
+- [560. Subarray Sum Equals K](https://github.com/quinn-sasha/leetcode/pull/16)
