@@ -1,0 +1,60 @@
+（思考ログ）
+- 前回の問題みたいに、BFSやDFSで一つの島を探索し切ることは同じだろう
+- 違いは、その島のエリアをカウントすること。
+- だからmax_areaを各島のareaと比べて更新していくのだろう
+- 再帰で書くよりも反復で書いた方が、カウントする処理は直感的になりそう
+
+(感想）
+- 最近授業に専念していたので、解く頻度が少なくなってきている。
+- 考え方は問題ないが、コードにすると変なエラーで時間が思ったよりもかかることがある。
+- もう少し定期的にやりたいと思った。
+
+(コメントされそうなこと）
+- `max_area = max(max_area, area)`で、area変数を解さずに、関数を直接max()の中に書いてもいい。
+- `visited`、`area`、`lands`を更新する順番の好み。
+- 変数名のコメントは、`lands`とか。
+- if文の書き方の好み。
+- `new_row, new_col`のような多重代入はせずに、１変数ごとに代入する方が好み。
+- 異常な入力だったらはじく。
+
+```python
+LAND = 1
+WATER = 0
+
+class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        # 後の関数内で利用されるから、先に定義した
+        row_length = len(grid)
+        col_length = len(grid[0])
+        visited = [[False] * col_length for _ in range(row_length)]
+
+        def is_new_land(row, col):
+            return grid[row][col] == LAND and not visited[row][col]
+
+        def count_island_area(start_row, start_col):
+            visited[start_row][start_col] = True
+            area = 1
+            lands = deque([(start_row, start_col)])
+            while lands:
+                row, col = lands.popleft()
+                directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+                for d_row, d_col in directions:
+                    new_row, new_col = row + d_row, col + d_col
+                    if not (0 <= new_row < row_length and 0 <= new_col < col_length):
+                        continue
+                    if not is_new_land(new_row, new_col):
+                        continue
+                    visited[new_row][new_col] = True
+                    area += 1
+                    lands.append((new_row, new_col))
+            return area
+
+        max_area = 0
+        for row in range(row_length):
+            for col in range(col_length):
+                if not is_new_land(row, col):
+                    continue
+                area = count_island_area(row, col)
+                max_area = max(max_area, area)
+        return max_area
+```
